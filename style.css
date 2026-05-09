@@ -473,6 +473,7 @@ section {
 }
 
 .filter-btn {
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--border);
   color: var(--muted);
@@ -490,6 +491,37 @@ section {
   background: linear-gradient(135deg, var(--purple), var(--pink));
   border-color: transparent;
   color: #fff;
+}
+
+.filter-btn.filter-copa.active,
+.filter-btn.filter-copa:hover {
+  background: linear-gradient(135deg, #009c3b, #ffdf00, #002776, #ffffff, #009c3b);
+  background-size: 200% 200%;
+  animation: rainbowShift 3s ease infinite;
+  border-color: transparent;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.limited-time-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  white-space: nowrap;
+  animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
 .catalog-grid {
@@ -1305,6 +1337,7 @@ section {
   background: rgba(139, 92, 246, 0.12);
 }
 
+.filament-selector label[id^="label-rainbow-"]:hover,
 .filament-selector label.selected-rainbow {
   border-color: transparent;
   color: #fff;

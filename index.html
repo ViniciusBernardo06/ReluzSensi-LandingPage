@@ -130,17 +130,104 @@
       </div>
       <div class="filter-tabs">
         <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn filter-copa" data-filter="copa">Copa <span class="limited-time-badge">Tempo Limitado</span></button>
         <button class="filter-btn" data-filter="articulado">Articulados</button>
         <button class="filter-btn" data-filter="sensorial">Sensoriais</button>
         <button class="filter-btn" data-filter="pedagogia">Pedagogia</button>
         <button class="filter-btn" data-filter="utilidade">Utilidade</button>
         <button class="filter-btn" data-filter="replicas">Réplicas</button>
+
       </div>
       <div class="catalog-grid" id="catalogGrid">
 
+        <!-- COPA 1: APITO -->
+        <div class="product-card no-selector" data-category="copa" id="prod-copa-apito">
+          <div class="product-img-wrap">
+            <img src="images/copa_apito.png" alt="Apito da Copa" style="object-fit:cover;" />
+            <span class="product-badge new" style="background: #009c3b;">🇧🇷 Copa</span>
+          </div>
+          <div class="product-info">
+            <h3>Apito da Torcida</h3>
+            <p>Apito temático impresso em 3D para fazer barulho e torcer muito pela nossa seleção.</p>
+            <div class="product-tags"><span>Copa</span><span>Acessório</span><span>Torcida</span></div>
+            <div class="product-footer">
+              <span class="price">R$ 15</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPA 2: CHAVEIRO TAÇA -->
+        <div class="product-card no-selector" data-category="copa" id="prod-copa-chaveiro-taca">
+          <div class="product-img-wrap">
+            <img src="images/copa_chaveiroTaca.png" alt="Chaveiro Taça da Copa" style="object-fit:cover;" />
+            <span class="product-badge new" style="background: #009c3b;">🇧🇷 Copa</span>
+          </div>
+          <div class="product-info">
+            <h3>Chaveiro Taça do Mundo</h3>
+            <p>Chaveiro exclusivo em formato de taça para você carregar a energia da torcida para todo lugar.</p>
+            <div class="product-tags"><span>Copa</span><span>Chaveiro</span><span>Lembrança</span></div>
+            <div class="product-footer">
+              <span class="price">R$ 12</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPA 3: PORTA FIGURINHAS -->
+        <div class="product-card no-selector" data-category="copa" id="prod-copa-figurinhas">
+          <div class="product-img-wrap">
+            <img src="images/copa_portaFigurinhas.png" alt="Porta Figurinhas da Copa" style="object-fit:cover;" />
+            <span class="product-badge new" style="background: #009c3b;">🇧🇷 Copa</span>
+          </div>
+          <div class="product-info">
+            <h3>Porta Figurinhas</h3>
+            <p>Caixinha temática perfeita para organizar e guardar as suas figurinhas repetidas da copa.</p>
+            <div class="product-tags"><span>Copa</span><span>Organização</span><span>Coleção</span></div>
+            <div class="product-footer">
+              <span class="price">R$ 25</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPA 4: CHAVEIRO SENSORIAL -->
+        <div class="product-card no-selector" data-category="copa" id="prod-copa-sensorial">
+          <div class="product-img-wrap">
+            <img src="images/copa_sensorialChaveiro.png" alt="Chaveiro Sensorial da Copa" style="object-fit:cover;" />
+            <span class="product-badge new" style="background: #009c3b;">🇧🇷 Copa</span>
+          </div>
+          <div class="product-info">
+            <h3>Chaveiro Sensorial Brasil</h3>
+            <p>Engrenagens e texturas sensoriais, ideal para aliviar a ansiedade na hora dos pênaltis!</p>
+            <div class="product-tags"><span>Copa</span><span>Sensorial</span><span>Anti-stress</span></div>
+            <div class="product-footer">
+              <span class="price">R$ 18</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPA 5: SUPORTE CONTROLE -->
+        <div class="product-card no-selector" data-category="copa" id="prod-copa-support">
+          <div class="product-img-wrap">
+            <img src="images/copa_supportController.png" alt="Suporte de Controle da Copa" style="object-fit:cover;" />
+            <span class="product-badge new" style="background: #009c3b;">🇧🇷 Copa</span>
+          </div>
+          <div class="product-info">
+            <h3>Suporte de Controle</h3>
+            <p>Suporte de mesa temático para os seus controles de videogame. Jogue com estilo de campeão!</p>
+            <div class="product-tags"><span>Copa</span><span>Gamer</span><span>Utilidade</span></div>
+            <div class="product-footer">
+              <span class="price">R$ 40</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
+            </div>
+          </div>
+        </div>
         <div class="product-card" data-category="articulado" id="prod-dragon">
           <div class="product-img-wrap">
-            <img src="images/product_dragon.png" alt="Dragão articulado 3D" />
+            <img src="images/product_dragon.png" alt="Dragão articulado 3D" data-basic="images/product_dragon.png"
+              data-rainbow="images/rainbow_dragon.png" />
             <span class="product-badge">🔥 Mais vendido</span>
           </div>
           <div class="product-info">
@@ -661,6 +748,13 @@
                   <option>Números Montessori</option>
                   <option>Passagem Impossível</option>
                   <option>Anéis de Foco</option>
+                </optgroup>
+                <optgroup label="Copa">
+                  <option>Apito da Torcida</option>
+                  <option>Chaveiro Taça do Mundo</option>
+                  <option>Porta Figurinhas</option>
+                  <option>Chaveiro Sensorial Brasil</option>
+                  <option>Suporte de Controle (Copa)</option>
                 </optgroup>
                 <optgroup label="Outros / Utilidades">
                   <option>Chaveiro Personalizado</option>
