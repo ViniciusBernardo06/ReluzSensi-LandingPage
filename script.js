@@ -122,12 +122,12 @@ document.querySelectorAll('.product-card:not(.card-custom):not(.no-selector)').f
 
   // Add interaction logic
   const selector = card.querySelector('.filament-selector');
-  const labelBasic   = document.getElementById(`label-basic-${uid}`);
+  const labelBasic = document.getElementById(`label-basic-${uid}`);
   const labelRainbow = document.getElementById(`label-rainbow-${uid}`);
 
   // Check if this card has swappable images
   const cardImg = card.querySelector('.product-img-wrap img');
-  const imgBasic   = cardImg?.dataset.basic;
+  const imgBasic = cardImg?.dataset.basic;
   const imgRainbow = cardImg?.dataset.rainbow;
 
   selector.addEventListener('change', (e) => {
@@ -152,3 +152,215 @@ document.querySelectorAll('.product-card:not(.card-custom):not(.no-selector)').f
     }
   });
 });
+
+// ===== THEME TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const htmlElement = document.documentElement;
+
+// Check saved theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+  htmlElement.setAttribute('data-theme', 'light');
+  themeToggle.textContent = '🌙';
+}
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  if (currentTheme === 'light') {
+    htmlElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+    themeToggle.textContent = '☀️';
+  } else {
+    htmlElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    themeToggle.textContent = '🌙';
+  }
+});
+
+// ===== SHOPPING CART =====
+let cart = [];
+const cartOverlay = document.getElementById('cartOverlay');
+const cartSidebar = document.getElementById('cartSidebar');
+const cartOpenBtn = document.getElementById('cartOpenBtn');
+const cartClose = document.getElementById('cartClose');
+const cartItemsContainer = document.getElementById('cartItems');
+const cartTotalEl = document.getElementById('cartTotal');
+const cartBadge = document.getElementById('cartBadge');
+const btnCheckout = document.getElementById('btnCheckout');
+
+// Toggle Cart
+function toggleCart() {
+  cartSidebar.classList.toggle('open');
+  cartOverlay.classList.toggle('open');
+}
+
+cartOpenBtn.addEventListener('click', toggleCart);
+cartClose.addEventListener('click', toggleCart);
+cartOverlay.addEventListener('click', toggleCart);
+
+// Add to Cart Logic
+document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const card = e.target.closest('.product-card');
+    if (!card) return;
+
+    const title = card.querySelector('h3').textContent;
+    const imgEl = card.querySelector('.product-img-wrap img');
+    const imgSrc = imgEl ? imgEl.src : '';
+
+    // Determine price and variant from the card
+    let priceText = card.querySelector('.price').textContent;
+    let baseMatch = priceText.match(/R\$\s*(\d+)/);
+    let price = baseMatch ? parseInt(baseMatch[1], 10) : 0;
+
+    let variant = 'Cores Básicas';
+
+    // Check if there's a filament selector
+    const selector = card.querySelector('.filament-selector');
+    if (selector) {
+      const selectedRadio = selector.querySelector('input[type="radio"]:checked');
+      if (selectedRadio && selectedRadio.value === 'rainbow') {
+        variant = 'Arco-íris';
+      }
+    } else {
+      // If it doesn't have a selector, check category for a generic variant string
+      if (['pedagogia', 'utilidade', 'replicas'].includes(card.dataset.category)) {
+        variant = 'Padrão';
+      } else {
+        variant = 'Padrão';
+      }
+    }
+
+    const itemId = `${title}-${variant}`;
+
+    // Check if item already exists
+    const existingItem = cart.find(item => item.id === itemId);
+
+    if (existingItem) {
+      existingItem.qty += 1;
+    } else {
+      cart.push({
+        id: itemId,
+        title: title,
+        variant: variant,
+        price: price,
+        img: imgSrc,
+        qty: 1,
+        color: variant === 'Arco-íris' ? 'Arco-íris' : 'A definir'
+      });
+    }
+
+    updateCartUI();
+
+    // Feedback animation on floating button
+    cartOpenBtn.style.transform = 'scale(1.2)';
+    setTimeout(() => { cartOpenBtn.style.transform = ''; }, 200);
+  });
+});
+
+function updateCartUI() {
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+  let totalItems = 0;
+
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = '<p style="text-align:center; color:var(--muted); margin-top:20px;">Seu carrinho está vazio.</p>';
+  } else {
+    cart.forEach((item, index) => {
+      total += item.price * item.qty;
+      totalItems += item.qty;
+
+      let colorSelectorHTML = '';
+      if (item.variant !== 'Arco-íris') {
+        const colors = ['A definir', 'Preto', 'Branco', 'Azul', 'Vermelho', 'Amarelo', 'Verde', 'Rosa', 'Roxo'];
+        let options = colors.map(c => `<option value="${c}" ${item.color === c ? 'selected' : ''}>${c}</option>`).join('');
+        colorSelectorHTML = `
+          <select class="cart-color-select" onchange="changeColor(${index}, this.value)">
+            ${options}
+          </select>
+        `;
+      }
+
+      const itemEl = document.createElement('div');
+      itemEl.className = 'cart-item';
+      itemEl.innerHTML = `
+        <img src="${item.img}" alt="${item.title}">
+        <div class="cart-item-info">
+          <div class="cart-item-title">${item.title}</div>
+          <div class="cart-item-variant">${item.variant}</div>
+          ${colorSelectorHTML}
+          <div class="cart-item-price">R$ ${item.price}</div>
+          <div class="cart-item-actions">
+            <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+            <span>${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+            <button class="cart-item-remove" onclick="removeItem(${index})">Remover</button>
+          </div>
+        </div>
+      `;
+      cartItemsContainer.appendChild(itemEl);
+    });
+  }
+
+  cartTotalEl.textContent = `R$ ${total}`;
+  cartBadge.textContent = totalItems;
+
+  if (totalItems > 0) {
+    cartBadge.style.display = 'flex';
+  } else {
+    cartBadge.style.display = 'none';
+  }
+}
+
+// Make functions available globally for inline onclick handlers
+window.changeQty = function (index, delta) {
+  if (cart[index].qty + delta > 0) {
+    cart[index].qty += delta;
+  } else {
+    cart.splice(index, 1);
+  }
+  updateCartUI();
+};
+
+window.removeItem = function (index) {
+  cart.splice(index, 1);
+  updateCartUI();
+};
+
+window.changeColor = function (index, newColor) {
+  cart[index].color = newColor;
+  updateCartUI();
+};
+
+// Checkout
+btnCheckout.addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert('Seu carrinho está vazio!');
+    return;
+  }
+
+  let total = 0;
+  let msg = 'Olá! Vim pelo site ReluzSensi e gostaria de finalizar meu pedido: %0A%0A';
+
+  cart.forEach(item => {
+    msg += `- *${item.qty}x ${item.title}*%0A`;
+    if (item.variant === 'Arco-íris') {
+      msg += `   ↳ Variação: ${item.variant}%0A`;
+    } else {
+      msg += `   ↳ Cor Escolhida: ${item.color}%0A`;
+    }
+    msg += `   ↳ Subtotal: R$ ${item.price * item.qty}%0A%0A`;
+    total += item.price * item.qty;
+  });
+
+  msg += `*TOTAL ESTIMADO: R$ ${total}*%0A%0A`;
+  msg += 'Por favor, aguardo retorno sobre prazos e frete!';
+
+  window.open(`https://wa.me/5561981490363?text=${msg}`, '_blank');
+});
+
+// Init
+updateCartUI();
+
+

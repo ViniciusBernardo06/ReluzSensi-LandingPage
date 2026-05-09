@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -20,14 +20,24 @@
   <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
-      <a href="#" class="logo">✨ ReluzSensi</a>
+      <a href="#" class="logo">✨ ReluzSensi </a>
       <ul class="nav-links">
-        <li><a href="#beneficios">Benefícios</a></li>
+        <li><a href="#beneficios"> Benefícios</a></li>
         <li><a href="#catalogo">Catálogo</a></li>
         <li><a href="#personalizado">Pedido Personalizado</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato" class="nav-cta">Pedir Agora</a></li>
       </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="Alternar tema">☀️</button>
+      <button class="cart-nav-btn" id="cartOpenBtn" aria-label="Abrir Carrinho">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
       <button class="burger" id="burger" aria-label="menu">&#9776;</button>
     </div>
     <ul class="mobile-menu" id="mobileMenu">
@@ -140,8 +150,8 @@
               <span>Articulado</span><span>Anti-stress</span><span>Colecionável</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 80</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 80</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -159,8 +169,8 @@
               <span>Texturas</span><span>TDAH</span><span>Sensorial</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 25</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price">R$ 25</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -179,8 +189,8 @@
               <span>Articulado</span><span>Anti-stress</span><span>Colecionável</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 32</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 32</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -188,8 +198,7 @@
         <div class="product-card" data-category="sensorial" id="prod-spiral">
           <div class="product-img-wrap">
             <img src="images/product_spiral.png" alt="Estrela Espiral Sensorial" data-basic="images/product_spiral.png"
-              data-rainbow="https://http2.mlstatic.com/D_NQ_NP_2X_664684-MLB103887353212_012026-F.webp"
-              style="object-fit:cover;" />
+              data-rainbow="images/rainbow_spiral.png" style="object-fit:cover;" />
             <span class="product-badge">⭐ Destaque</span>
           </div>
           <div class="product-info">
@@ -200,30 +209,13 @@
               <span>Sensorial</span><span>Anti-stress</span><span>Foco</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 32</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 32</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
 
-        <div class="product-card" data-category="articulado" id="prod-snake">
-          <div class="product-img-wrap">
-            <img src="https://i.pinimg.com/1200x/41/e9/a7/41e9a7ce4da2d8cbd4387ff9755dd330.jpg"
-              alt="Cobra articulada 3D" />
-            <span class="product-badge">❤️ Favorito</span>
-          </div>
-          <div class="product-info">
-            <h3>Cobra Articulada</h3>
-            <p>Flexível e envolvente. Um brinquedo infinito — escorregadio e hipnótico nos movimentos.</p>
-            <div class="product-tags">
-              <span>Articulado</span><span>Relaxante</span><span>Colorido</span>
-            </div>
-            <div class="product-footer">
-              <span class="price">A partir de R$ 28</span>
-              <a href="#contato" class="btn-card">Pedir</a>
-            </div>
-          </div>
-        </div>
+
 
         <div class="product-card" data-category="articulado" id="prod-hipo">
           <div class="product-img-wrap">
@@ -238,8 +230,8 @@
               <span>Articulado</span><span>Fofo</span><span>Anti-stress</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 38</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 38</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -258,8 +250,8 @@
               <span>Articulado</span><span>Colecionável</span><span>Anti-stress</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 70</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price">R$ 70</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -277,29 +269,13 @@
               <span>Sensorial</span><span>Anti-stress</span><span>Textura</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 40</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 40</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
 
-        <div class="product-card" data-category="sensorial" id="prod-rings">
-          <div class="product-img-wrap">
-            <img src="images/product_rings.png" alt="Anéis sensoriais 3D" />
-            <span class="product-badge new">✨ Novo</span>
-          </div>
-          <div class="product-info">
-            <h3>Anéis Sensoriais</h3>
-            <p>Conjunto de anéis com texturas únicas. Usados nos dedos para estimulação contínua e discreta.</p>
-            <div class="product-tags">
-              <span>Discreto</span><span>Portátil</span><span>Textura</span>
-            </div>
-            <div class="product-footer">
-              <span class="price">A partir de R$ 20</span>
-              <a href="#contato" class="btn-card">Pedir</a>
-            </div>
-          </div>
-        </div>
+
 
         <div class="product-card" data-category="sensorial" id="prod-stingray">
           <div class="product-img-wrap">
@@ -315,8 +291,8 @@
               <span>Sensorial</span><span>Articulada</span><span>Anti-stress</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 30</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 30</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -335,8 +311,8 @@
               <span>Articulado</span><span>Colecionável</span><span>Anti-stress</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 40</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 40</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -356,8 +332,8 @@
               <span>Articulado</span><span>Dinossauro</span><span>Colecionável</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 40</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 40</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -376,8 +352,8 @@
               <span>Articulado</span><span>Anti-stress</span><span>Fofo</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 30</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price">R$ 30</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -385,7 +361,8 @@
         <!-- OVO SENSORIAL -->
         <div class="product-card" data-category="sensorial" id="prod-egg">
           <div class="product-img-wrap">
-            <img src="images/product_egg.png" alt="Ovo sensorial 3D" style="object-fit:cover;" />
+            <img src="images/product_egg.png" alt="Ovo sensorial 3D" data-basic="images/product_egg.png"
+              data-rainbow="images/rainbow_egg.png" style="object-fit:cover;" />
             <span class="product-badge new">✨ Novo</span>
           </div>
           <div class="product-info">
@@ -396,8 +373,29 @@
               <span>Sensorial</span><span>Anti-stress</span><span>Ergonômico</span>
             </div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 55</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price">R$ 55</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BUBBLE POP -->
+        <div class="product-card" data-category="sensorial" id="prod-bubblepop">
+          <div class="product-img-wrap">
+            <img src="images/product_bubblepop.png" alt="Bubble Pop Sensorial" data-basic="images/product_bubblepop.png"
+              data-rainbow="images/rainbow_bubblepop.png" style="object-fit:cover;" />
+            <span class="product-badge new">✨ Novo</span>
+          </div>
+          <div class="product-info">
+            <h3>Bubble Pop Sensorial</h3>
+            <p>Design circular super agradável de apertar. As bolhas em relevo oferecem um feedback tátil incrível para
+              concentração.</p>
+            <div class="product-tags">
+              <span>Sensorial</span><span>Foco</span><span>Tátil</span>
+            </div>
+            <div class="product-footer">
+              <span class="price"> R$ 35</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -414,8 +412,8 @@
               tátil e lúdica.</p>
             <div class="product-tags"><span>Educação</span><span>Alfabetização</span><span>Tátil</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 85</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price">R$ 85</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -432,8 +430,8 @@
               visualização geométrica.</p>
             <div class="product-tags"><span>Educação</span><span>Matemática</span><span>Montessori</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 80</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 80</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -451,8 +449,8 @@
               de problemas.</p>
             <div class="product-tags"><span>Desafio</span><span>STEM</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 30</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price">R$ 30</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -468,8 +466,8 @@
             <p>Suporte articulado impresso em 3D para mesa ou cama. Prático, resistente e personalizável.</p>
             <div class="product-tags"><span>Utilidade</span><span>Casa</span><span>Prático</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 22</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"> R$ 22</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -484,8 +482,8 @@
             <p>Porta-canetas, clips e acessórios impresso sob medida. Design moderno para o seu espaço.</p>
             <div class="product-tags"><span>Utilidade</span><span>Escritório</span><span>Organização</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 28</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price">R$ 28</span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -500,8 +498,8 @@
             <p>Chaveiros exclusivos com nome, formato e cor à sua escolha. Perfeito para presentear.</p>
             <div class="product-tags"><span>Utilidade</span><span>Presente</span><span>Personalizado</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 12</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"></span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -517,8 +515,8 @@
             <p>Réplicas decorativas de espadas, facas e armas de jogos e filmes. Detalhamento impressionante.</p>
             <div class="product-tags"><span>Réplica</span><span>Games</span><span>Decoração</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 45</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"></span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -533,8 +531,8 @@
             <p>Personagens de animes, games e filmes impressos com alto nível de detalhe. Encomende o seu favorito!</p>
             <div class="product-tags"><span>Réplica</span><span>Anime</span><span>Colecionável</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 60</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"></span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -550,8 +548,8 @@
             <p>Troféus e medalhas personalizados com nome, data e texto. Ideal para eventos e competições.</p>
             <div class="product-tags"><span>Réplica</span><span>Evento</span><span>Presente</span></div>
             <div class="product-footer">
-              <span class="price">A partir de R$ 35</span>
-              <a href="#contato" class="btn-card">Pedir</a>
+              <span class="price"></span>
+              <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
@@ -643,11 +641,32 @@
               <label for="produto">Produto desejado *</label>
               <select id="produto" required>
                 <option value="">Selecione...</option>
-                <option>Dragão Articulado</option>
-                <option>Spinner Flor</option>
-                <option>Cubo Sensorial</option>
-                <option>Cobra Articulada</option>
-                <option>Anéis Sensoriais</option>
+                <optgroup label="Sensoriais">
+                  <option>Cubo Infinito</option>
+                  <option>Estrela Espiral Sensorial</option>
+                  <option>Ovo Sensorial</option>
+                  <option>Bubble Pop Sensorial</option>
+                  <option>Arraia Sensorial</option>
+                  <option>Bola Sensorial</option>
+                </optgroup>
+                <optgroup label="Articulados">
+                  <option>Dragão Cristal Articulado</option>
+                  <option>Tubarão Articulado</option>
+                  <option>Dragão com Asa Articulado</option>
+                  <option>Triceratops Fóssil Articulado</option>
+                  <option>Polvo Articulado</option>
+                </optgroup>
+                <optgroup label="Pedagogia & Desafios">
+                  <option>Alfabeto Montessori</option>
+                  <option>Números Montessori</option>
+                  <option>Passagem Impossível</option>
+                  <option>Anéis de Foco</option>
+                </optgroup>
+                <optgroup label="Outros / Utilidades">
+                  <option>Chaveiro Personalizado</option>
+                  <option>Réplica / Miniatura</option>
+                  <option>Troféu / Prêmio</option>
+                </optgroup>
                 <option>Outro (descreva abaixo)</option>
               </select>
             </div>
@@ -668,7 +687,7 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
+  <!-- DEPOIMENTOS (Oculto temporariamente)
   <section id="depoimentos">
     <div class="container">
       <div class="section-header">
@@ -715,6 +734,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- SOBRE -->
   <section id="sobre">
@@ -837,6 +857,24 @@
       </div>
     </div>
   </footer>
+
+  <!-- CART SIDEBAR & OVERLAY -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Seu Carrinho 🛒</h3>
+      <button class="cart-close" id="cartClose">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Items will be injected here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <span id="cartTotal">R$ 0</span></div>
+      <button class="btn-whatsapp btn-full" id="btnCheckout" style="width:100%">Finalizar no WhatsApp 💬</button>
+    </div>
+  </div>
+
+  <!-- FLOATING CART BUTTON REMOVED (MOVED TO NAVBAR) -->
 
   <script src="script.js"></script>
 </body>
