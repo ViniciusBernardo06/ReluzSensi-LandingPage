@@ -135,6 +135,7 @@
         <button class="filter-btn" data-filter="pedagogia">Pedagogia</button>
         <button class="filter-btn filter-copa" data-filter="copa">Copa <span class="limited-time-badge">Tempo
             Limitado</span></button>
+        <button class="filter-btn" data-filter="miniaturas">Miniaturas</button>
         <button class="filter-btn" data-filter="utilidade">Utilidade</button>
         <button class="filter-btn" data-filter="replicas">Réplicas</button>
 
@@ -161,8 +162,7 @@
         </div>
         <div class="product-card" data-category="articulado" id="prod-shark">
           <div class="product-img-wrap">
-            <img src="https://img.olx.com.br/images/75/755631497211897.jpg" alt="Tubarão articulado 3D"
-              style="object-fit:cover;" />
+            <img src="images/basic_shark.png" alt="Tubarão articulado 3D" data-basic="images/basic_shark.png" data-rainbow="images/rainbow_shark.png" style="object-fit:cover;" />
             <span class="product-badge">🦈 Destaque</span>
           </div>
           <div class="product-info">
@@ -173,14 +173,14 @@
               <span>Articulado</span><span>Anti-stress</span><span>Colecionável</span>
             </div>
             <div class="product-footer">
-              <span class="price"> R$ 32</span>
+              <span class="price"> R$ 40</span>
               <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
         </div>
         <div class="product-card" data-category="articulado" id="prod-hipo">
           <div class="product-img-wrap">
-            <img src="images/rainbow-hipo.png" alt="Hipopótamo articulado arco-íris 3D" style="object-fit:cover;" />
+            <img src="images/basic_hipo.png" alt="Hipopótamo articulado 3D" data-basic="images/basic_hipo.png" data-rainbow="images/rainbow-hipo.png" style="object-fit:cover;" />
             <span class="product-badge new">🦛 Novo</span>
           </div>
           <div class="product-info">
@@ -218,7 +218,9 @@
         <!-- DRAGÃO COM ASA -->
         <div class="product-card" data-category="articulado" id="prod-wing-dragon">
           <div class="product-img-wrap">
-            <img src="images/product_WingDragon.png" alt="Dragão com asa articulado 3D" data-basic="images/product_WingDragon.png" data-rainbow="images/rainbow_WingDragon.png" style="object-fit:cover;" />
+            <img src="images/product_WingDragon.png" alt="Dragão com asa articulado 3D"
+              data-basic="images/product_WingDragon.png" data-rainbow="images/rainbow_WingDragon.png"
+              style="object-fit:cover;" />
             <span class="product-badge">🐉 Destaque</span>
           </div>
           <div class="product-info">
@@ -257,7 +259,8 @@
         <!-- POLVO ARTICULADO -->
         <div class="product-card" data-category="articulado" id="prod-octopus">
           <div class="product-img-wrap">
-            <img src="images/product_octopus.png" alt="Polvo articulado 3D" data-basic="images/product_octopus.png" data-rainbow="images/rainbow_octopus.png" style="object-fit:cover;" />
+            <img src="images/product_octopus.png" alt="Polvo articulado 3D" data-basic="images/product_octopus.png"
+              data-rainbow="images/rainbow_octopus.png" style="object-fit:cover;" />
             <span class="product-badge">🐙 Favorito</span>
           </div>
           <div class="product-info">
@@ -315,7 +318,8 @@
 
         <div class="product-card" data-category="sensorial" id="prod-ball">
           <div class="product-img-wrap">
-            <img src="images/product_ball.png" alt="Bola sensorial 3D" style="object-fit:cover;" />
+            <img src="images/product_ball.png" alt="Bola sensorial 3D" data-basic="images/product_ball.png"
+              data-rainbow="images/rainbow_ball.png" style="object-fit:cover;" />
             <span class="product-badge new">✨ Novo</span>
           </div>
           <div class="product-info">
@@ -335,7 +339,8 @@
 
         <div class="product-card" data-category="sensorial" id="prod-stingray">
           <div class="product-img-wrap">
-            <img src="images/product_stingray.png" alt="Arraia sensorial articulada impressa em 3D" data-basic="images/product_stingray.png" data-rainbow="images/rainbow_stingray.jpg"
+            <img src="images/product_stingray.png" alt="Arraia sensorial articulada impressa em 3D"
+              data-basic="images/product_stingray.png" data-rainbow="images/rainbow_stingray.jpg"
               style="object-fit:cover;" />
             <span class="product-badge new">✨ Novo</span>
           </div>
@@ -395,6 +400,7 @@
         <div class="product-card" data-category="sensorial" id="prod-ped-passage">
           <div class="product-img-wrap">
             <img src="images/product_Impossible passage.png" alt="Quebra-cabeça Passagem Impossível 3D"
+              data-basic="images/product_Impossible passage.png" data-rainbow="images/rainbow_Impossible passage.png"
               style="object-fit:cover;" />
             <span class="product-badge new">⭐ Destaque</span>
           </div>
@@ -487,7 +493,7 @@
             <p>Caixinha temática perfeita para organizar e guardar as suas figurinhas repetidas da copa.</p>
             <div class="product-tags"><span>Copa</span><span>Organização</span><span>Coleção</span></div>
             <div class="product-footer">
-              <span class="price">R$ 25</span>
+              <span class="price">R$ 40</span>
               <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
@@ -523,18 +529,35 @@
               <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
-        </div> <!-- UTILIDADE 1 -->
-        <div class="product-card" data-category="utilidade" id="prod-util-1">
-          <div class="product-img-wrap product-placeholder" style="background: linear-gradient(135deg,#6d28d9,#8b5cf6)">
-            <img src="https://shre.ink/7Z2h" alt="Suporte Celular" />
+        </div>
+        <!-- MINIATURAS 1 -->
+        <div class="product-card no-selector" data-category="miniaturas" id="prod-mini-animais">
+          <div class="product-img-wrap">
+            <img src="images/mini_animals.png" alt="Mini Animais 3D" style="object-fit:cover;" />
             <span class="product-badge new">✨ Novo</span>
           </div>
           <div class="product-info">
-            <h3>Suporte de Celular</h3>
-            <p>Suporte articulado impresso em 3D para mesa ou cama. Prático, resistente e personalizável.</p>
-            <div class="product-tags"><span>Utilidade</span><span>Casa</span><span>Prático</span></div>
+            <h3>Kit Mini Animais</h3>
+            <p>Miniaturas adoráveis (4x6 cm). <strong>Pedido mínimo: 12 unidades.</strong></p>
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+              <label style="font-size: 0.9em; font-weight: 600; display: block; margin-bottom: 5px;">Escolha o
+                animal:</label>
+              <select class="custom-variant-select"
+                style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text);">
+                <option value="Misto (Vários)">Misto (Vários)</option>
+                <option value="Raposa">Raposa</option>
+                <option value="Jacaré">Jacaré</option>
+                <option value="Polvo">Polvo</option>
+                <option value="Cachorro">Cachorro</option>
+                <option value="Elefante">Elefante</option>
+                <option value="Hipopótamo">Hipopótamo</option>
+                <option value="Pato">Pato</option>
+                <option value="Capivara">Capivara</option>
+              </select>
+            </div>
+            <div class="product-tags"><span>Miniatura</span><span>Animais</span><span>Kit</span></div>
             <div class="product-footer">
-              <span class="price"> R$ 22</span>
+              <span class="price">R$ 50</span>
               <button class="btn-card add-to-cart-btn">Adicionar</button>
             </div>
           </div>
@@ -720,7 +743,8 @@
                 </optgroup>
                 <optgroup label="Outros / Utilidades">
                   <option>Chaveiro Personalizado</option>
-                  <option>Réplica / Miniatura</option>
+                  <option>Réplica</option>
+                  <option>Miniatura</option>
                   <option>Troféu / Prêmio</option>
                 </optgroup>
                 <option>Outro (descreva abaixo)</option>
@@ -926,6 +950,7 @@
     </div>
     <div class="cart-footer">
       <div class="cart-total">Total: <span id="cartTotal">R$ 0</span></div>
+      <p style="font-size: 0.85em; color: var(--text); opacity: 0.8; text-align: center; margin-bottom: 10px;">* Frete não incluso. Será calculado no WhatsApp.</p>
       <button class="btn-whatsapp btn-full" id="btnCheckout" style="width:100%">Finalizar no WhatsApp 💬</button>
     </div>
   </div>

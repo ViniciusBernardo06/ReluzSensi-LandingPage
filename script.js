@@ -218,14 +218,17 @@ document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
 
     // Check if there's a filament selector
     const selector = card.querySelector('.filament-selector');
+    const customSelect = card.querySelector('.custom-variant-select');
     if (selector) {
       const selectedRadio = selector.querySelector('input[type="radio"]:checked');
       if (selectedRadio && selectedRadio.value === 'rainbow') {
         variant = 'Arco-íris';
       }
+    } else if (customSelect) {
+      variant = customSelect.value;
     } else {
       // If it doesn't have a selector, check category for a generic variant string
-      if (['pedagogia', 'utilidade', 'replicas'].includes(card.dataset.category)) {
+      if (['pedagogia', 'utilidade', 'replicas', 'miniaturas'].includes(card.dataset.category)) {
         variant = 'Padrão';
       } else {
         variant = 'Padrão';
@@ -354,8 +357,8 @@ btnCheckout.addEventListener('click', () => {
     total += item.price * item.qty;
   });
 
-  msg += `*TOTAL ESTIMADO: R$ ${total}*%0A%0A`;
-  msg += 'Por favor, aguardo retorno sobre prazos e frete!';
+  msg += `*TOTAL ESTIMADO (sem frete): R$ ${total}*%0A%0A`;
+  msg += 'Por favor, aguardo retorno para calcularmos o valor do frete!';
 
   window.open(`https://wa.me/5561981490363?text=${msg}`, '_blank');
 });
