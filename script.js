@@ -143,12 +143,28 @@ document.querySelectorAll('.product-card:not(.card-custom):not(.no-selector)').f
 
     // Swap image if available
     if (cardImg && imgBasic && imgRainbow) {
+      const newSrc = isRainbow ? imgRainbow : imgBasic;
+      
+      // Feedback visual de que está carregando
       cardImg.style.transition = 'opacity 0.3s ease';
-      cardImg.style.opacity = '0';
-      setTimeout(() => {
-        cardImg.src = isRainbow ? imgRainbow : imgBasic;
+      cardImg.style.opacity = '0.4';
+      
+      // Preload da imagem
+      const tempImg = new Image();
+      tempImg.onload = () => {
+        // Quando carregar, finaliza a transição suavemente
+        cardImg.style.opacity = '0';
+        setTimeout(() => {
+          cardImg.src = newSrc;
+          cardImg.style.opacity = '1';
+        }, 300);
+      };
+      tempImg.onerror = () => {
+        // Em caso de erro, tenta forçar a troca mesmo assim
+        cardImg.src = newSrc;
         cardImg.style.opacity = '1';
-      }, 300);
+      };
+      tempImg.src = newSrc;
     }
   });
 });
