@@ -1340,10 +1340,6 @@ section {
   display: none;
 }
 
-.filament-selector input[type="radio"]:checked+span {
-  /* handled via label */
-}
-
 .filament-selector label.selected-basic {
   border-color: var(--purple);
   color: var(--lilac);
